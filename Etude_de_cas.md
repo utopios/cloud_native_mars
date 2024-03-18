@@ -7,9 +7,15 @@ Vous travaillez pour "FoodieFast", une startup qui souhaite lancer une applicati
 
 1.1. Pourquoi serait-il judicieux pour "FoodieFast" d'adopter des runtimes éphémères pour sa plateforme 
 
+ - *Ils offrent scalabilité dynamique*
+
 1.2. Comment l'utilisation des runtimes éphémères peut-elle assurer une haute disponibilité lors des pics de commande pendant les heures de repas ?
+
+- *Pendant les pics de commandes, les runtimes éphèmeres peuvent être augmenter dynamiquement. Et lorsque la demande diminue, on peut réduire les ressources pour minimiser les coûts*
     
 1.3. Discutez des préoccupations de sécurité potentielles concernant les transactions de paiement et les données des utilisateurs. Comment les runtimes éphémères peuvent-ils aider ou compliquer la situation ?
+
+- *Les variables d'env, les api de gestion de secret Vault,...*
 
 
 
@@ -17,9 +23,27 @@ Vous travaillez pour "FoodieFast", une startup qui souhaite lancer une applicati
 
 2.1. Esquissez une architecture Cloud Native pour l'application "FoodieFast".
 
+- UI Mobile et WEB
+- APIs Gateway
+- APIs composition, CQRS, SAGA
+- Microservices :
+    - Commandes
+    - Paiement
+    - Menu
+    - Livraison
+    - Authentification
+    - Utilisateur
+
+- Chaque microservice est empaqueté dans un conteneur.
+- Les conteneurs seront orchestrés par un orchestrateur Kubernetes.
+
+- La communication en RESTFUL
+
+
 
 2.2. Expliquez comment chaque microservice contribue à l'efficacité globale et à l'évolutivité de l'application.
 
+- Chaque microservice est responsable d'une fonctionnalité distincte. Chaque service peut être développé, déployé et mise à l'echelle indépendamment des autres.
 
 2.3. Comment cette architecture supporte-t-elle les déploiements fréquents et la gestion des erreurs ?
 
