@@ -1,0 +1,95 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    app.quarkus.io/quarkus-version: 3.8.2
+    app.quarkus.io/commit-id: 3a702363792616415215e341bfedc676fab3947b
+    app.quarkus.io/vcs-uri: https://github.com/utopios/cloud_native_mars.git
+    app.quarkus.io/build-timestamp: 2024-03-19 - 15:28:49 +0000
+  labels:
+    app.kubernetes.io/name: demo-quarkus
+    app.kubernetes.io/version: 1.0-SNAPSHOT
+    app.kubernetes.io/managed-by: quarkus
+  name: demo-quarkus
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app.kubernetes.io/name: demo-quarkus
+    app.kubernetes.io/version: 1.0-SNAPSHOT
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    app.quarkus.io/quarkus-version: 3.8.2
+    app.quarkus.io/commit-id: 3a702363792616415215e341bfedc676fab3947b
+    app.quarkus.io/vcs-uri: https://github.com/utopios/cloud_native_mars.git
+    app.quarkus.io/build-timestamp: 2024-03-19 - 15:28:49 +0000
+  labels:
+    app.kubernetes.io/name: demo-quarkus
+    app.kubernetes.io/version: 1.0-SNAPSHOT
+    app.kubernetes.io/managed-by: quarkus
+  name: demo-quarkus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: demo-quarkus
+      app.kubernetes.io/version: 1.0-SNAPSHOT
+  template:
+    metadata:
+      annotations:
+        app.quarkus.io/quarkus-version: 3.8.2
+        app.quarkus.io/commit-id: 3a702363792616415215e341bfedc676fab3947b
+        app.quarkus.io/vcs-uri: https://github.com/utopios/cloud_native_mars.git
+        app.quarkus.io/build-timestamp: 2024-03-19 - 15:28:49 +0000
+      labels:
+        app.kubernetes.io/managed-by: quarkus
+        app.kubernetes.io/name: demo-quarkus
+        app.kubernetes.io/version: 1.0-SNAPSHOT
+    spec:
+      containers:
+        - env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          image: docker.io/ihababadi/demo-quarkus:1.0-SNAPSHOT
+          imagePullPolicy: Always
+          name: demo-quarkus
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 64Mi
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /q/health/live
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /q/health/ready
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          startupProbe:
+            httpGet:
+              port: 8080
+              path: /q/health/started
+            initialDelaySeconds: 5
+            periodSeconds: 5
+
