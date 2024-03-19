@@ -47,13 +47,19 @@ Vous travaillez pour "FoodieFast", une startup qui souhaite lancer une applicati
 
 2.3. Comment cette architecture supporte-t-elle les déploiements fréquents et la gestion des erreurs ?
 
+- Cette architecture facilite les déploiements fréquents en utilisant les conteneurs et kubernetes.
+- Si un microservice échoue, les autres continuent de fonctionner.
+
 
 **Partie 3 : Le concept des Twelve-Factor App**
 
 3.1. Identifiez cinq principes des Twelve-Factor App que "FoodieFast" devrait adopter en priorité pour assurer la scalabilité et la résilience de son application.
 
+- La totalité !!!
+
 3.2. Comment ces principes pourraient-ils faciliter le déploiement, le scaling, et la maintenance de l'application, notamment lors de l'ajout de nouveaux chefs ou de nouvelles fonctionnalités ?
 
+- Ces principes garantissent que l'application est portable, évolutive, et résiliente.
 
 **Partie 4 : Stratégies de déploiement**
 
