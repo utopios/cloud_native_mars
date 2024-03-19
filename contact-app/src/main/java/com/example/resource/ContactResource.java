@@ -3,6 +3,7 @@ package com.example.resource;
 
 import com.example.dto.ContactDTO;
 import com.example.service.ContactService;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;

@@ -21,12 +21,12 @@ public class PersonResource {
 
     @GET
     public List<Person> get() {
-        return Arrays.asList(Person.builder().firstname("toto").lastname("tata").build());
+        return personService.getPersons();
     }
 
     @POST
     public Person post(Person person) {
-        return person;
+       return personService.addPerson(person.getFirstname(), person.getLastname());
     }
 
 
