@@ -48,4 +48,13 @@ public class ContactService {
         return contactRepository.findById(id);
     }
 
+    public boolean isLive() {
+        //Logique métier de vérification si le service est en live
+        return true;
+    }
+
+    public boolean isReady() {
+        return true;
+    }
+
 }
