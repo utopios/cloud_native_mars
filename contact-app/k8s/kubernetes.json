@@ -4,9 +4,9 @@
   "metadata" : {
     "annotations" : {
       "app.quarkus.io/quarkus-version" : "3.8.2",
-      "app.quarkus.io/commit-id" : "fae90345108a131004e12887e25089582b159077",
+      "app.quarkus.io/commit-id" : "64b34a7ae83d89b81dfbac6014b7b70d0b5deedc",
       "app.quarkus.io/vcs-uri" : "https://github.com/utopios/cloud_native_mars.git",
-      "app.quarkus.io/build-timestamp" : "2024-03-20 - 08:28:09 +0000"
+      "app.quarkus.io/build-timestamp" : "2024-03-20 - 09:29:43 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "contact-app",
@@ -35,9 +35,9 @@
   "metadata" : {
     "annotations" : {
       "app.quarkus.io/quarkus-version" : "3.8.2",
-      "app.quarkus.io/commit-id" : "fae90345108a131004e12887e25089582b159077",
+      "app.quarkus.io/commit-id" : "64b34a7ae83d89b81dfbac6014b7b70d0b5deedc",
       "app.quarkus.io/vcs-uri" : "https://github.com/utopios/cloud_native_mars.git",
-      "app.quarkus.io/build-timestamp" : "2024-03-20 - 08:28:09 +0000"
+      "app.quarkus.io/build-timestamp" : "2024-03-20 - 09:29:43 +0000"
     },
     "labels" : {
       "app.kubernetes.io/name" : "contact-app",
@@ -58,9 +58,9 @@
       "metadata" : {
         "annotations" : {
           "app.quarkus.io/quarkus-version" : "3.8.2",
-          "app.quarkus.io/commit-id" : "fae90345108a131004e12887e25089582b159077",
+          "app.quarkus.io/commit-id" : "64b34a7ae83d89b81dfbac6014b7b70d0b5deedc",
           "app.quarkus.io/vcs-uri" : "https://github.com/utopios/cloud_native_mars.git",
-          "app.quarkus.io/build-timestamp" : "2024-03-20 - 08:28:09 +0000"
+          "app.quarkus.io/build-timestamp" : "2024-03-20 - 09:29:43 +0000"
         },
         "labels" : {
           "app.kubernetes.io/managed-by" : "quarkus",
